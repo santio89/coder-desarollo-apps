@@ -1,22 +1,41 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View, TextInput, Button } from 'react-native';
-import styles from './styles/styles';
+import { Text, View, TextInput, Button, FlatList, StyleSheet } from 'react-native';
+import { useState } from 'react';
+import Header from './components/Header.js';
 
 export default function App() {
+  const [items, setItems] = useState([])
+
   return (
     <View style={styles.container}>
-      <View style={styles.inputContainer}>
-        <TextInput placeholder='Item a agregar' />
-        <Button title='Agregar'/>
-      </View>
-      <View style={styles.itemsContainer}>  
-        <Text>Item</Text>
-        <Text>Item</Text>
-        <Text>Item</Text>
-        <Text>Item</Text>
-      </View>
-      <StatusBar style="auto" />
+      <Header />
+      <FlatList 
+        data={items} 
+        renderItem={item=> (
+        <Text>{item.text}</Text>
+      )} 
+      keyExtractor={item => item.id}
+      />
     </View>
   );
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#1a1a1a',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#fff',
+    padding: 30
+  },
+  inputContainer: {
+    color: '#e74c4c',
+    fontWeight: 'bold',
+    padding: 10
+  },
+  itemsContainer: {
+    color: '#e74c4c',
+    fontWeight: 'bold',
+    padding: 10
+  }
+});
