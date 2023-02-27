@@ -1,20 +1,14 @@
-import { Text, View, TextInput, Button, FlatList, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { useState } from 'react';
 import Header from './components/Header.js';
+import ToDoList from './components/ToDoList.js';
 
 export default function App() {
-  const [items, setItems] = useState([])
 
   return (
     <View style={styles.container}>
       <Header />
-      <FlatList 
-        data={items} 
-        renderItem={item=> (
-        <Text>{item.text}</Text>
-      )} 
-      keyExtractor={item => item.id}
-      />
+      <ToDoList/>
     </View>
   );
 }
@@ -26,16 +20,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     color: '#fff',
-    padding: 30
-  },
-  inputContainer: {
-    color: '#e74c4c',
-    fontWeight: 'bold',
-    padding: 10
-  },
-  itemsContainer: {
-    color: '#e74c4c',
-    fontWeight: 'bold',
-    padding: 10
+    padding: 20
   }
 });
