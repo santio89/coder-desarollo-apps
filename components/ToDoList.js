@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
         flex: 1,
         marginRight: 10,
         fontSize: 20,
+        padding: 4,
     },
     listItemContainer: {
         width: '100%',
