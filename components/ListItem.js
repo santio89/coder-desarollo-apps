@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
-import { Text, StyleSheet, TouchableOpacity, Alert } from 'react-native'
+import { Text, StyleSheet, TouchableOpacity } from 'react-native'
+import alert from './Alert'
 
 export default function ListItem({ item, deleteItem }) {
     const [itemComplete, setItemComplete] = useState(false)
 
     return (
 
-        <TouchableOpacity style={itemComplete?styles.listItemComplete:styles.listItem} onPress={() => setItemComplete(itemComplete => !itemComplete)}>
+        <TouchableOpacity style={itemComplete ? styles.listItemComplete : styles.listItem} onPress={() => setItemComplete(itemComplete => !itemComplete)}>
 
             <Text style={styles.listItemText}> <Text style={itemComplete ? styles.listItemIndicatorComplete : styles.listItemIndicator}>●&nbsp;</Text> <Text style={itemComplete ? styles.lineThrough : ''}>{item.text}</Text></Text>
-            <TouchableOpacity onPress={() => Alert.alert('ELIMINAR', '¿Eliminar tarea?', [
+            <TouchableOpacity onPress={() => alert('ELIMINAR', '¿Eliminar tarea?', [
                 { text: 'Cancelar' },
                 { text: 'Eliminar', onPress: () => deleteItem(item.id) },
-            ])}><Text style={styles.listItemDelete}>X</Text></TouchableOpacity>
+            ])}>
+                <Text style={styles.listItemDelete}>X</Text>
+            </TouchableOpacity>
 
         </TouchableOpacity>
 
@@ -28,7 +31,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'slateblue',
         borderRadius: 4,
         padding: 8,
-        paddingLeft: 2,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -43,7 +45,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'slateblue',
         borderRadius: 4,
         padding: 8,
-        paddingLeft: 2,
+        paddingLeft: 4,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -64,12 +66,14 @@ const styles = StyleSheet.create({
     listItemText: {
         flex: 1,
         fontSize: 20,
-        color: 'white'
+        color: 'white',
+        wordBreak: 'break-word'
     },
     listItemDelete: {
         fontWeight: 'bold',
         color: 'darkred',
         fontSize: 20,
+        padding: 4,
     },
     lineThrough: {
         textDecorationLine: 'line-through',
