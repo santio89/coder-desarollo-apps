@@ -1,2 +1,2 @@
-# coder-desarollo-apps
-CODERHOUSE - DESARROLLO DE APLICACIONES
+# to-do-list-react-native
+TO DO LIST - REACT NATIVE
