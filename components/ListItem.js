@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'slateblue',
         borderRadius: 4,
         padding: 8,
-        paddingLeft: 4,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -73,7 +72,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'darkred',
         fontSize: 20,
-        padding: 4,
+        padding: 8,
+        scale: 1.4,
     },
     lineThrough: {
         textDecorationLine: 'line-through',

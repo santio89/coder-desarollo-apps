@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'slateblue',
     padding: 10,
     width: Dimensions.get('window').width,
+    width: '100%',
     textAlign: 'center',
     marginBottom: 20,
     borderBottomColor: 'white',
