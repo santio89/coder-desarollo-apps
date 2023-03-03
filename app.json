@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "coder-desarrollo-apps",
-    "slug": "coder-desarrollo-apps",
+    "name": "to-do-list-react-native",
+    "slug": "to-do-list-react-native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
