@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'slateblue',
-    padding: 10,
+    padding: 8,
     width: Dimensions.get('window').width,
     width: '100%',
     textAlign: 'center',
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 
   header: {
     color: 'white',
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold'
   }
 });
