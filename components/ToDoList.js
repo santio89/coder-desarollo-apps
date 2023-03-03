@@ -31,6 +31,7 @@ export default function ToDoList() {
 
 
     const addItem = (item) => {
+        if(item.text === ""){return} 
         setItems((oldItems) => [...oldItems, item])
     }
 
