@@ -76,11 +76,13 @@ export default function ToDoList() {
 
 const styles = StyleSheet.create({
     inputContainer: {
-        width: '90%',
+        width: '100%',
         flexDirection: 'row',
-        marginTop: 20,
-        marginBottom: 40,
+        marginTop: 10,
+        marginBottom: 20,
         maxWidth: 800,
+        justifyContent: 'space-between',
+        padding: 10,
     },
     input: {
         borderBottomColor: 'slateblue',
@@ -90,9 +92,10 @@ const styles = StyleSheet.create({
         marginRight: 10,
         fontSize: 20,
         padding: 4,
+        minWidth: 10,
     },
     listItemContainer: {
-        width: '90%',
+        width: '100%',
         padding: 10,
         maxWidth: 800,
     }
