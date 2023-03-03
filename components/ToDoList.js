@@ -76,7 +76,7 @@ export default function ToDoList() {
 
 const styles = StyleSheet.create({
     inputContainer: {
-        width: '100%',
+        width: '90%',
         flexDirection: 'row',
         marginTop: 20,
         marginBottom: 40,
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
         padding: 4,
     },
     listItemContainer: {
-        width: '100%',
+        width: '90%',
         padding: 10,
         maxWidth: 800,
     }
