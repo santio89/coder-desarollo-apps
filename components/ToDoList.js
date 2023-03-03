@@ -24,7 +24,7 @@ export default function ToDoList() {
     return (
         <>
             <View style={styles.inputContainer}>
-                <TextInput value={input} onChangeText={input => setInput(input)} placeholder='NUEVA TAREA' placeholderTextColor="#808080" style={styles.input} />
+            <TextInput value={input} onChangeText={input => setInput(input)} onSubmitEditing={() => { addItem({ id: uuidv4(), text: input }); setInput('') }} placeholder='NUEVA TAREA' placeholderTextColor="#808080" style={styles.input} />
                 <Button title='AGREGAR' color='slateblue' disabled={btnDisabled} onPress={()=>{addItem({id: uuidv4(), text: input}); setInput('')}}/>
             </View>
 
