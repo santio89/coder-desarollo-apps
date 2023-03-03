@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
         color: '#1a1a1a',
         fontWeight: 'bold',
         fontSize: 20,
+        scale: .8,
     },
     listItemIndicatorComplete: {
         color: 'white',
