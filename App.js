@@ -1,11 +1,32 @@
 import { View, StyleSheet } from 'react-native';
 import Header from './components/Header.js';
 import ToDoList from './components/ToDoList.js';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
+import {useCallback} from 'react'
+import Constants from './styles/Constants.js'
+
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    'golos-regular': require('./assets/fonts/GolosText-Regular.ttf'),
+    'golos-bold': require('./assets/fonts/GolosText-Bold.ttf'),
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} onLayout={onLayoutRootView}>
       <Header />
       <ToDoList />
     </View>
@@ -15,9 +36,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1a1a1a',
+    backgroundColor: Constants.colorDark,
     alignItems: 'center',
     justifyContent: 'center',
-    color: '#fff',
+    color: Constants.colorWhite,
   }
 });

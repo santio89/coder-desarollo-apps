@@ -1,4 +1,5 @@
 import { Text, View, StyleSheet, Dimensions } from 'react-native';
+import Constants from '../styles/Constants';
 
 export default function Header() {
   return (
@@ -13,19 +14,20 @@ const styles = StyleSheet.create({
   headerContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'slateblue',
+    backgroundColor: Constants.colorPrimary,
     padding: 8,
     width: Dimensions.get('window').width,
     width: '100%',
     textAlign: 'center',
     marginBottom: 20,
-    borderBottomColor: 'white',
+    borderBottomColor: Constants.colorWhite,
     borderBottomWidth: 2,
   },
 
   header: {
-    color: 'white',
-    fontSize: 28,
-    fontWeight: 'bold'
+    color: Constants.colorWhite,
+    fontSize: Constants.fontLg,
+    fontWeight: 'bold',
+    fontFamily: Constants.fontPrimaryBold,
   }
 });
