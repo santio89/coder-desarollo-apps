@@ -119,6 +119,8 @@ const styles = StyleSheet.create({
     buttonAddContainer: {
         backgroundColor: Constants.colorPrimary,
         borderRadius: 4,
+        borderWidth: 2,
+        borderColor: Constants.colorPrimaryDark,
         padding: 8,
         justifyContent: 'center',
         alignItems: 'center',
@@ -172,13 +174,14 @@ const styles = StyleSheet.create({
         gap: 20,
     },
     modalBtnText: {
-        fontFamily: Constants.fontPrimaryBold,
+        fontFamily: Constants.fontPrimary,
         fontSize: Constants.fontSm,
         padding: 8,
-        borderWidth: 2,
+        borderWidth: 1,
         borderRadius: 4,
-        backgroundColor: Constants.colorPrimary,
-        borderColor: Constants.colorPrimaryDark,
+        borderStyle: 'solid',
+        backgroundColor: Constants.colorPrimaryDark,
+        borderColor: Constants.colorWhite,
         color: Constants.colorWhite
     }
 })
