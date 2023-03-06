@@ -14,9 +14,9 @@ export default function ListItem({ storeData, items, setItems, item, modalVisibl
 
     return (
         <View style={[styles.listItemContainer, modalVisible.active && modalVisible.id === item.id && styles.listItemGray]}>
-            <TouchableOpacity style={itemComplete ? styles.listItemComplete : styles.listItem} onPress={() => setItemComplete(itemComplete => !itemComplete)}>
+            <TouchableOpacity style={[styles.listItem, itemComplete && styles.listItemComplete]} onPress={() => setItemComplete(itemComplete => !itemComplete)}>
 
-                <Text style={styles.listItemText}> <Text style={itemComplete ? styles.listItemIndicatorComplete : styles.listItemIndicator}>●&nbsp;</Text> <Text style={itemComplete ? styles.lineThrough : ''}>{item.text}</Text></Text>
+                <Text style={styles.listItemText}> <Text style={[styles.listItemIndicator, itemComplete && styles.listItemIndicatorComplete]}>●&nbsp;</Text> <Text style={itemComplete ? styles.lineThrough : ''}>{item.text}</Text></Text>
                 <TouchableOpacity onPress={() => setModalVisible({active: true, id: item.id})}>
                     <Text style={styles.listItemDelete}>X</Text>
                 </TouchableOpacity>
@@ -46,35 +46,20 @@ const styles = StyleSheet.create({
         borderStyle: 'solid',
         borderWidth: 2
     },
+    listItemComplete: {
+        borderStyle: 'dotted',
+    },
     listItemGray: {
         filter: 'grayscale(1)'
     },  
-    listItemComplete: {
-        color: Constants.colorWhite,
-        fontSize: 40,
-        marginBottom: 10,
-        backgroundColor: Constants.colorPrimary,
-        borderRadius: 4,
-        padding: 8,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        borderColor: Constants.colorPrimaryDark,
-        borderStyle: 'dotted',
-        borderWidth: 2
-    },
     listItemIndicator: {
         color: Constants.colorDark,
         fontWeight: 'bold',
         fontFamily: Constants.fontPrimaryBold,
-        fontSize: Constants.fontMd,
-        scale: .8,
+        fontSize: Constants.fontSm,
     },
     listItemIndicatorComplete: {
         color: Constants.colorWhite,
-        fontWeight: 'bold',
-        fontFamily: Constants.fontPrimaryBold,
-        fontSize: Constants.fontMd,
     },
     listItemText: {
         flex: 1,
