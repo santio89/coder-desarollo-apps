@@ -16,11 +16,11 @@ const styles = StyleSheet.create({
   headerContainer: {
     alignItems: 'center',
     justifyContent: 'center',
+    textAlign: 'center',
     backgroundColor: Constants.colorPrimary,
     padding: 8,
     width: Dimensions.get('window').width,
     width: '100%',
-    textAlign: 'center',
     marginBottom: 20,
     borderBottomColor: Constants.colorWhite,
     borderBottomWidth: 2,

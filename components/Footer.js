@@ -14,6 +14,8 @@ const styles = StyleSheet.create({
     footer: {
         backgroundColor: Constants.colorPrimaryDark,
         width: '100%',
+        justifyContent: 'center',
+        alignItems: 'end',
         textAlign: 'end',
         borderTopWidth: 1,
         borderColor: Constants.colorPrimary,
@@ -24,5 +26,6 @@ const styles = StyleSheet.create({
         fontFamily: Constants.fontPrimary,
         fontSize: Constants.fontSm,
         padding: 8,
+        width: 'fit-content'
     }
 })
