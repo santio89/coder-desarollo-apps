@@ -81,7 +81,7 @@ export default function ToDoList() {
                                             <Text style={styles.modalBtnText} onPress={() => setModalVisible({active: false, id: null})}>Cancelar</Text>
                                         </TouchableOpacity>
                                         <TouchableOpacity style={styles.modalBtn} onPress={() => { deleteItem(modalVisible.id); setModalVisible({active: false, id: null}) }}>
-                                            <Text style={styles.modalBtnText}>Eliminar</Text>
+                                            <Text style={[styles.modalBtnText, styles.borderRed]}>Eliminar</Text>
                                         </TouchableOpacity>
                                     </View>
                                 </View>
@@ -183,5 +183,8 @@ const styles = StyleSheet.create({
         borderColor: Constants.colorWhite,
         color: Constants.colorWhite,
         marginHorizontal: 10
+    },
+    borderRed: {
+        borderColor: Constants.colorRed,
     }
 })
