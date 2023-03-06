@@ -1,5 +1,6 @@
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import Header from './components/Header.js';
+import Footer from './components/Footer.js';
 import ToDoList from './components/ToDoList.js';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
@@ -29,6 +30,7 @@ export default function App() {
     <View style={styles.container} onLayout={onLayoutRootView}>
       <Header />
       <ToDoList />
+      <Footer />
     </View>
   );
 }
@@ -38,7 +40,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Constants.colorDark,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     color: Constants.colorWhite,
   }
 });
