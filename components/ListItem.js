@@ -13,10 +13,10 @@ export default function ListItem({ storeData, items, setItems, item, modalVisibl
     }, [itemComplete])
 
     return (
-        <View style={[styles.listItemContainer, modalVisible.active && modalVisible.id === item.id && styles.listItemGray]}>
+        <View style={[styles.listItemContainer, modalVisible.active && modalVisible.id === item.id && styles.grayScale]}>
             <TouchableOpacity style={[styles.listItem, itemComplete && styles.listItemComplete]} onPress={() => setItemComplete(itemComplete => !itemComplete)}>
 
-                <Text style={styles.listItemText}> <Text style={[styles.listItemIndicator, itemComplete && styles.listItemIndicatorComplete]}>●&nbsp;</Text> <Text style={itemComplete ? styles.lineThrough : ''}>{item.text}</Text></Text>
+                <Text style={[styles.listItemText, itemComplete && styles.grayScale]}> <Text style={[styles.listItemIndicator, itemComplete && styles.grayScale]}>●&nbsp;</Text> <Text style={itemComplete && [styles.lineThrough, styles.grayScale]}>{item.text}</Text></Text>
                 <TouchableOpacity onPress={() => setModalVisible({active: true, id: item.id})}>
                     <Text style={styles.listItemDelete}>X</Text>
                 </TouchableOpacity>
@@ -48,18 +48,14 @@ const styles = StyleSheet.create({
     },
     listItemComplete: {
         borderStyle: 'dotted',
+        backgroundColor: Constants.colorPrimaryDark,
+        borderColor: Constants.colorPrimary
     },
-    listItemGray: {
-        filter: 'grayscale(1)'
-    },  
     listItemIndicator: {
-        color: Constants.colorDark,
+        color: Constants.colorPrimaryDark,
         fontWeight: 'bold',
         fontFamily: Constants.fontPrimaryBold,
         fontSize: Constants.fontSm,
-    },
-    listItemIndicatorComplete: {
-        color: Constants.colorWhite,
     },
     listItemText: {
         flex: 1,
@@ -67,7 +63,7 @@ const styles = StyleSheet.create({
         color: Constants.colorWhite,
         wordBreak: 'break-word',
         fontFamily: Constants.fontPrimary
-    },
+    }, 
     listItemDelete: {
         fontWeight: 'bold',
         color: Constants.colorRed,
@@ -79,4 +75,8 @@ const styles = StyleSheet.create({
     lineThrough: {
         textDecorationLine: 'line-through',
     },
+    grayScale: {
+        color: 'darkgray',
+        filter: 'grayscale(1)'
+    },  
 })

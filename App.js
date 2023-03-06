@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
 import ToDoList from './components/ToDoList.js';

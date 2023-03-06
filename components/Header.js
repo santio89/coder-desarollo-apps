@@ -1,11 +1,13 @@
-import { Text, View, StyleSheet, Dimensions } from 'react-native';
+import { Text, View, StyleSheet, Dimensions, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import Constants from '../styles/Constants';
 
 export default function Header() {
   return (
-    <View style={styles.headerContainer}>
-      <Text style={styles.header}>TO DO LIST</Text>
-    </View>
+    <TouchableWithoutFeedback onPress={()=>Keyboard.dismiss()}>
+      <View style={styles.headerContainer}>
+        <Text style={styles.header}>TO DO LIST</Text>
+      </View>
+    </TouchableWithoutFeedback>
   )
 }
 
