@@ -157,7 +157,6 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         padding: 8,
         width: '100%',
-        gap: 40,
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
@@ -167,11 +166,11 @@ const styles = StyleSheet.create({
         fontSize: Constants.fontLg,
         fontWeight: 'bold',
         fontFamily: Constants.fontPrimaryBold,
-        color: Constants.colorWhite
+        color: Constants.colorWhite,
+        marginBottom: 40
     },
     modalBtnContainer: {
         flexDirection: 'row',
-        gap: 20,
     },
     modalBtnText: {
         fontFamily: Constants.fontPrimary,
@@ -182,6 +181,7 @@ const styles = StyleSheet.create({
         borderStyle: 'solid',
         backgroundColor: Constants.colorPrimaryDark,
         borderColor: Constants.colorWhite,
-        color: Constants.colorWhite
+        color: Constants.colorWhite,
+        marginHorizontal: 10
     }
 })
