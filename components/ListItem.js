@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Text, StyleSheet, TouchableOpacity } from 'react-native'
 import alert from './Alert'
 
-export default function ListItem({ item, deleteItem }) {
-    const [itemComplete, setItemComplete] = useState(false)
+export default function ListItem({ storeData, items, setItems, item, deleteItem }) {
+    const [itemComplete, setItemComplete] = useState(item.completed)
+
+    useEffect(()=>{
+        item.completed = itemComplete
+        setItems(items)
+        storeData(items)
+    }, [itemComplete])
 
     return (
 

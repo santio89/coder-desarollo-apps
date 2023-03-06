@@ -39,7 +39,6 @@ export default function ToDoList() {
         setItems((oldItems) => oldItems.filter(item => item.id != id))
     }
 
-
     useEffect(() => {
         retrieveData();
     }, [])
@@ -57,7 +56,7 @@ export default function ToDoList() {
         <>
             <View style={styles.inputContainer}>
                 <TextInput value={input} onChangeText={input => setInput(input)} onSubmitEditing={() => { addItem({ id: uuidv4(), text: input }); setInput('') }} placeholder='NUEVA TAREA' placeholderTextColor="#808080" style={styles.input} />
-                <Button title='AGREGAR' color='slateblue' disabled={btnDisabled} onPress={() => { addItem({ id: uuidv4(), text: input }); setInput('') }} />
+                <Button title='AGREGAR' color='slateblue' disabled={btnDisabled} onPress={() => { addItem({ id: uuidv4(), text: input, completed: false }); setInput('') }} />
             </View>
 
             <FlatList style={styles.listItemContainer}
@@ -65,7 +64,7 @@ export default function ToDoList() {
                 renderItem={({ item }) => (
 
 
-                    <ListItem item={item} deleteItem={deleteItem} />
+                    <ListItem storeData={storeData} items={items} setItems={setItems} item={item} deleteItem={deleteItem} />
 
                 )}
                 keyExtractor={item => item.id}
