@@ -26,6 +26,5 @@ const styles = StyleSheet.create({
         fontFamily: Constants.fontPrimary,
         fontSize: Constants.fontSm,
         padding: 8,
-        width: 'fit-content'
     }
 })
