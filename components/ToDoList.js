@@ -14,7 +14,7 @@ export default function ToDoList() {
 
     const storeData = async (items) => {
         try {
-            await storageSetItem("toDoList", JSON.stringify(items));
+            await storageSetItem("tdl-list", JSON.stringify(items));
         } catch (error) {
             console.log("error saving data to storage")
         }
@@ -22,7 +22,7 @@ export default function ToDoList() {
 
     const retrieveData = async () => {
         try {
-            const value = await storageGetItem('toDoList');
+            const value = await storageGetItem('tdl-list');
             if (value !== null) {
                 setItems(JSON.parse(value))
             }
