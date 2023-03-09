@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { FlatList, Text, TextInput, View, StyleSheet, TouchableOpacity, Modal } from 'react-native'
+import { FlatList, Text, TextInput, View, KeyboardAvoidingView, StyleSheet, TouchableOpacity, Modal, Platform } from 'react-native'
 import 'react-native-get-random-values'; /* for uuid */
 import { v4 as uuidv4 } from 'uuid';
 import ListItem from './ListItem';
@@ -56,7 +56,7 @@ export default function ToDoList() {
 
     return (
         <>
-            <View style={styles.inputContainer}>
+            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.inputContainer}>
                 <TextInput value={input} onChangeText={input => setInput(input)} onSubmitEditing={() => { addItem({ id: uuidv4(), text: input }); setInput('') }} placeholder='NUEVA TAREA' placeholderTextColor="#808080" style={styles.input} />
 
                 <TouchableOpacity disabled={btnDisabled} onPress={() => { addItem({ id: uuidv4(), text: input, completed: false }); setInput('') }} style={[styles.buttonAddContainer, btnDisabled && styles.buttonDisabled]}>
@@ -64,7 +64,7 @@ export default function ToDoList() {
                         AGREGAR
                     </Text>
                 </TouchableOpacity>
-            </View>
+            </KeyboardAvoidingView>
 
             <FlatList style={styles.listItemContainer}
                 data={items}
