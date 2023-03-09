@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Text, StyleSheet, TouchableOpacity, View } from 'react-native'
-import Constants from '../styles/Constants'
+import Constants from '../constants/Styles'
 
 export default function ListItem({ storeData, items, setItems, item, modalVisible, setModalVisible }) {
     const [itemComplete, setItemComplete] = useState(item.completed);

@@ -1,5 +1,5 @@
 import { Text, View, StyleSheet, Dimensions, TouchableWithoutFeedback, Keyboard } from 'react-native';
-import Constants from '../styles/Constants';
+import Constants from '../constants/Styles';
 
 export default function Header() {
   return (

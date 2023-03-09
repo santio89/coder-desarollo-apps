@@ -4,7 +4,7 @@ import 'react-native-get-random-values'; /* for uuid */
 import { v4 as uuidv4 } from 'uuid';
 import ListItem from './ListItem';
 import { storageSetItem, storageGetItem } from './AsyncStorage';
-import Constants from '../styles/Constants';
+import Constants from '../constants/Styles';
 
 export default function ToDoList() {
     const [btnDisabled, setBtnDisabled] = useState(true)

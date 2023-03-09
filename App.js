@@ -5,7 +5,7 @@ import ToDoList from './components/ToDoList.js';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import {useCallback} from 'react'
-import Constants from './styles/Constants.js'
+import Constants from './constants/Styles.js'
 
 SplashScreen.preventAutoHideAsync();
 
